@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Weather App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact us</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              How to use ?
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Delhi</a></li>
+              <li><a class="dropdown-item" href="#">Mumbai</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Banglore</a></li>
+            </ul>
+          </li>
+        </ul> -->
+        <form class="d-flex" role="search">
+          <input id="city" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" id="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container py-3">
+    <h2 class="my-4 text-center">Weather of <span id="cityName"></span></h2>
+    <main>
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">Tempratures</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><span id="temp2"></span><small class="text-body-secondary fw-light"><Sup><span>&#8451</span></Sup></small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Temprature <span id="temp"></span></li>
+                <li>Min-Temprature <span id="min_temp"></span></li>
+                <li>Max-Temprature <span id="max_temp"></span></li>
+              </ul>
+              <!-- <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button> -->
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">Humidity</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><span id="humidity2"></span><small class="text-body-secondary fw-light"> %</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Cloud_pct <span id="cloud_pct"></span></li>
+                <li>Feels_like <span id="feels_like"></span></li>
+                <li>Humidity <span id="humidity"></span></li>
+              </ul>
+              <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button> -->
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-bg-primary border-primary">
+              <h4 class="my-0 fw-normal">Wind</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title"><span id="wind_speed"></span><small class="text-body-secondary fw-light"> Km/hr</small></h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>Wind_speed <span id="wind_speed2"></span></li>
+                <!-- <li>Wind_degrees <span id="wind_degrees"></span></li> -->
+                <li>Sunrise <span id="sunrise"></span></li>
+                <li>Sunset <span id="sunset"></span></li>
+              </ul>
+              <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br>
+    <hr>
+      <h2 class="display-6 text-center mb-4">Weather of other common places</h2>
+      <div class="table-responsive">
+        <table class="table text-center">
+          <thead>
+            <tr>
+              <th style="width: 34%;"></th>
+              <th style="width: 22%;"> Cloud_pct </th>
+              <th style="width: 22%;"> Temp </th>
+              <th style="width: 22%;"> Feels_like </th>
+              <th style="width: 22%;"> Humidity </th>
+              <th style="width: 22%;"> Min_temp </th>
+              <th style="width: 22%;"> Max_temp </th>
+              <th style="width: 22%;"> Wind_speed </th>
+              <th style="width: 22%;"> Wind_degrees </th>
+              <th style="width: 22%;"> Sunrise </th>
+              <th style="width: 22%;"> Sunset </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" class="text-start">Mumbai</th>
+              <td><span id="a"></span></td>
+              <td><span id="b"></span></td>
+              <td><span id="c"></span></td>
+              <td><span id="d"></span></td>
+              <td><span id="e"></span></td>
+              <td><span id="f"></span></td>
+              <td><span id="g"></span></td>
+              <td><span id="h"></span></td>
+              <td><span id="i"></span></td>
+              <td><span id="j"></span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Nagpur</th>
+              <td><span id="a1"></span></td>
+              <td><span id="b1"></span></td>
+              <td><span id="c1"></span></td>
+              <td><span id="d1"></span></td>
+              <td><span id="e1"></span></td>
+              <td><span id="f1"></span></td>
+              <td><span id="g1"></span></td>
+              <td><span id="h1"></span></td>
+              <td><span id="i1"></span></td>
+              <td><span id="j1"></span></td>
+            </tr>
+          </tbody>
+
+          <tbody>
+            <tr>
+              <th scope="row" class="text-start">Kolkata</th>
+              <td><span id="a2"></span></td>
+              <td><span id="b2"></span></td>
+              <td><span id="c2"></span></td>
+              <td><span id="d2"></span></td>
+              <td><span id="e2"></span></td>
+              <td><span id="f2"></span></td>
+              <td><span id="g2"></span></td>
+              <td><span id="h2"></span></td>
+              <td><span id="i2"></span></td>
+              <td><span id="j2"></span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Banglor</th>
+              <td><span id="a3"></span></td>
+              <td><span id="b3"></span></td>
+              <td><span id="c3"></span></td>
+              <td><span id="d3"></span></td>
+              <td><span id="e3"></span></td>
+              <td><span id="f3"></span></td>
+              <td><span id="g3"></span></td>
+              <td><span id="h3"></span></td>
+              <td><span id="i3"></span></td>
+              <td><span id="j3"></span></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-start">Delhi</th>
+              <td><span id="a4"></span></td>
+              <td><span id="b4"></span></td>
+              <td><span id="c4"></span></td>
+              <td><span id="d4"></span></td>
+              <td><span id="e4"></span></td>
+              <td><span id="f4"></span></td>
+              <td><span id="g4"></span></td>
+              <td><span id="h4"></span></td>
+              <td><span id="i4"></span></td>
+              <td><span id="j4"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <section class="second-section" id="home">
+    <div class="paragraph">
+        <p class="big-text">Home</p>
+        <p class="small-text">Current Weather Conditions:
+
+          Display the current weather conditions for the user's current location or a predefined location.
+          Show the temperature in degrees Celsius or Fahrenheit.
+          Include an icon or image representing the weather condition (e.g., sun, clouds, rain).
+          Location:
+          
+          Show the name of the location for which the weather information is displayed.
+          Allow users to easily switch between multiple saved locations.
+          Temperature Trends:
+          
+          Display a graph or chart showing the temperature trends for the day or week.
+          Highlight high and low temperatures for the selected timeframe.
+          Weather Forecast:
+          
+          Provide a summary of the weather forecast for the next few days.
+          Include icons, temperature highs and lows, and a brief description (e.g., "Partly cloudy," "Rainy").
+          Additional Weather Data:
+          
+          Include additional weather data such as humidity, wind speed, UV index, and precipitation chances.
+          Make this information easily accessible through tabs or expandable sections.
+          User Settings:</p>
+    </div>
+    <div class="thumbnail">
+        <img src="https://source.unsplash.com/random/?weather,plant" height="200px" width="200px" alt=""
+            class="fluid">
+    </div>
+</section>
+<section class="third-section" id="about">
+  <div class="paragraph-2">
+      <p class="big-text">About</p>
+      <p class="small-text">
+        Enable users to create profiles where they can save their favorite locations and personalize their weather app experience.
+        Weather Alerts:
+
+        Display important weather alerts and warnings for the user's location.
+        Include information about the type of alert and its duration.
+        Search Bar:
+        
+        Include a search bar or location input field for users to search for weather information for specific places.
+        Interactive Maps:
+        
+        Offer an interactive map with weather radar and satellite imagery.
+        Allow users to zoom in and out and view weather patterns in real-time.
+        News and Articles:
+        
+        Provide links or snippets of weather-related news articles or updates.
+        Keep users informed about weather-related events in their area.
+        Sunrise and Sunset Times:
+        
+        Display the times of sunrise and sunset for the current location.
+        Historical Weather Data:
+        
+        Allow users to access historical weather data for the location, such as past temperature records or rainfall history.
+        Widgets (for Mobile):
+        
+        Offer widgets that users can place on their device's home screen for quick access to weather information.
+        User Profile:</p>
+  </div>
+  <div class="thumbnail">
+      <img src="https://source.unsplash.com/random/?industry,pollution" height="200px" width="200px" alt=""
+          class="fluid">
+  </div>
+</section>
+<section class="second-section" id="contact">
+  <div class="paragraph">
+      <p class="big-text">Contact us</p>
+      <p class="small-text">Welcome to our Contact Us page! We'd love to hear from you and assist with any questions or concerns you may have.
+        Email:adi.mule@rediffmail.com. <br>
+Phone Number: 9834590376. <br>
+Physical Address: Nanded, Maharashtra 431605. <br>
+Mailing Address: same as above.
+      </p>
+  </div>
+  <div class="thumbnail">
+      <img src="https://source.unsplash.com/random/?earth,digital weather" height="200px" width="200px" alt=""
+          class="fluid">
+  </div>
+</section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+
+  <footer class="my-5 pt-5 text-body-secondary text-center text-small">
+    <p class="mb-1">© 2025–2030 AkshayWeather.co.in</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#contact">Privacy</a></li>
+      <li class="list-inline-item"><a href="#contact">Terms</a></li>
+      <li class="list-inline-item"><a href="#contact">Support</a></li>
+    </ul>
+  </footer>
+</body>
+
+</html>
